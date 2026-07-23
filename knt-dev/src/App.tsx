@@ -6,6 +6,12 @@ import heroBg from './assets/bg1.png';
 import kmcodes from './assets/kmcodes.png';
 import lunar from './assets/lunar.png';
 
+
+import unpackImg from './assets/unpack-ai.jpeg'; 
+import kmcodesImg from './assets/kmcodesweb.png';
+import voiceImg from './assets/voiceinaction.png';
+import vukaImg from './assets/vukamjita.png';
+
 interface FormData {
   name: string;
   email: string;
@@ -454,7 +460,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* PORTFOLIO (UPDATED WITH REAL PROJECTS) */}
+        {/* PORTFOLIO (UPDATED WITH SCREENSHOTS) */}
         <div id="portfolio" className="space-y-6">
           <div className="flex items-center justify-between observe-me fade-up">
             <div className="space-y-1">
@@ -484,28 +490,32 @@ export default function App() {
                 desc: "A custom split-architecture web application deployed via scalable digital hosting platforms.",
                 stack: ["React.js", "Render Cloud", "Supabase"],
                 url: "www.unpack-ai.co.za",
-                link: "https://www.unpack-ai.co.za"
+                link: "https://www.unpack-ai.co.za",
+                img: unpackImg // <-- Connected image
               },
               {
                 title: "KM CODES Portfolio",
                 desc: "A full-stack web application with a custom CMS for managing and showcasing a growing portfolio of software projects.",
                 stack: ["Next.js", "Tailwind CSS", "THREE.JS"],
                 url: "kmcodes.netlify.app",
-                link: "https://kmcodes.netlify.app/"
+                link: "https://kmcodes.netlify.app/",
+                img: kmcodesImg // <-- Connected image
               },
               {
                 title: "Voice in Action",
                 desc: "A custom web application for a South African NGO, built to manage and track community development projects.",
                 stack: ["React.js", "Tailwind CSS", "TypeScript"],
                 url: "voice-in-action.netlify.app",
-                link: "https://voice-in-action.netlify.app/"
+                link: "https://voice-in-action.netlify.app/",
+                img: voiceImg // <-- Connected image
               },
               {
                 title: "Vuka Mjita",
                 desc: "A custom web application for a South African NGO, built to spread awareness about men's mental health.",
                 stack: ["React.js", "Tailwind CSS", "TypeScript"],
                 url: "vukamjita.netlify.app",
-                link: "https://vukamjita.netlify.app/"
+                link: "https://vukamjita.netlify.app/",
+                img: vukaImg // <-- Connected image
               }
             ].map((project, i) => (
               <div 
@@ -514,16 +524,32 @@ export default function App() {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <a href={project.link} target="_blank" rel="noreferrer" className="block relative cursor-pointer">
-                  <div className="aspect-video bg-[#13151A] border-b border-white/5 p-4 flex flex-col justify-end relative overflow-hidden group-hover:bg-[#1A1D24] transition-colors">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#FF7A00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  
+                  {/* Image & Overlay Container */}
+                  <div className="aspect-video bg-[#13151A] border-b border-white/5 p-4 flex flex-col justify-end relative overflow-hidden transition-colors">
+                    
+                    {/* The Actual Screenshot */}
+                    <img 
+                      src={project.img} 
+                      alt={project.title} 
+                      className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+                    />
+
+                    {/* Dark gradient to ensure text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0E] via-[#0A0B0E]/40 to-transparent opacity-80"></div>
+                    
+                    {/* Orange Hover Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#FF7A00]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Hover Link Icon */}
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 text-[#FF7A00]">
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 text-[#FF7A00] z-10 drop-shadow-md">
                       <svg fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
                     </div>
                     
-                    <span className="text-[10px] font-mono text-[#FF7A00] z-10">{project.url}</span>
+                    <span className="text-[10px] font-mono text-[#FF7A00] z-10 drop-shadow-lg font-bold">{project.url}</span>
                   </div>
+
+                  {/* Card Content */}
                   <div className="p-5 space-y-3">
                     <h4 className="text-sm font-bold group-hover:text-[#FF7A00] transition-colors">{project.title}</h4>
                     <p className="text-[11px] text-neutral-400 leading-relaxed">{project.desc}</p>
