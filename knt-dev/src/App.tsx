@@ -494,11 +494,18 @@ export default function App(): JSX.Element {
                 link: "https://kmcodes.netlify.app/"
               },
               {
-                title: "FinTech Dashboard UX",
-                desc: "High-fidelity UI/UX interface design and wireframing for an upcoming regional retail investment portal.",
-                stack: ["Figma", "Tailwind CSS", "TypeScript"],
-                url: "In Development",
-                link: "#"
+                title: "Voice in Action",
+                desc: "A custom web application for a South African NGO, built to manage and track community development projects.",
+                stack: ["React.js", "Tailwind CSS", "TypeScript"],
+                url: "voice-in-action.netlify.app",
+                link: "https://voice-in-action.netlify.app/"
+              },
+              {
+                title: "Vuka Mjita",
+                desc: "A custom web application for a South African NGO, built to spread awareness about men's mental health.",
+                stack: ["React.js", "Tailwind CSS", "TypeScript"],
+                url: "vukamjita.netlify.app",
+                link: "https://vukamjita.netlify.app/"
               }
             ].map((project, i) => (
               <div 
