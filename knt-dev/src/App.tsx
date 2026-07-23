@@ -83,7 +83,7 @@ const ThreeBackground = () => {
 /* =========================================================================
    MAIN APP COMPONENT
    ========================================================================= */
-export default function App(): JSX.Element {
+export default function App() {
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
 
   // New States for Mobile Menu & FAQ
