@@ -247,7 +247,7 @@ export default function App() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-wider font-semibold" style={{ color: '#94A3B8' }}>
               <a href="#services" className="hover:text-white transition-colors">Services</a>
-              <a href="#process" className="hover:text-white transition-colors">Process</a>
+              
               <a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a>
               <a href="#team" className="hover:text-white transition-colors">Team</a>
               <a href="#contact" className="hover:text-white transition-colors">Contact</a>
@@ -276,7 +276,7 @@ export default function App() {
           {isMobileMenuOpen && (
             <div className="md:hidden absolute top-full left-0 w-full bg-[#0F1115] border-b border-white/5 py-4 px-6 flex flex-col space-y-4 shadow-xl z-50">
               <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold uppercase tracking-wide text-neutral-300 hover:text-white">Services</a>
-              <a href="#process" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold uppercase tracking-wide text-neutral-300 hover:text-white">Process</a>
+              
               <a href="#portfolio" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold uppercase tracking-wide text-neutral-300 hover:text-white">Portfolio</a>
               <a href="#team" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold uppercase tracking-wide text-neutral-300 hover:text-white">Team</a>
               <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold uppercase tracking-wide text-neutral-300 hover:text-white">FAQ</a>
