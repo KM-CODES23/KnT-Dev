@@ -90,7 +90,7 @@ const ThreeBackground = () => {
    MAIN APP COMPONENT
    ========================================================================= */
 export default function App() {
-  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
+  
 
   // New States for Mobile Menu & FAQ
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -218,6 +218,34 @@ export default function App() {
     { q: "How long does a custom web application take to build?", a: "Timelines depend heavily on feature scope, but a standard application MVP typically moves from discovery to deployment within 4 to 8 weeks." },
     { q: "Do we own the source code after launch?", a: "Absolutely. Once the project is finalized and the final invoice is cleared, the intellectual property and source code belong entirely to you." }
   ];
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitStatus('submitting');
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' }); // Clear the form
+        setTimeout(() => setSubmitStatus('idle'), 4000); // Reset button after 4 seconds
+      })
+      .catch((error) => {
+        console.error(error);
+        setSubmitStatus('error');
+      });
+  };
 
   return (
     // Replaced solid background color with transparent so the 3D grid shows through
@@ -859,30 +887,64 @@ export default function App() {
                 </div>
                 
                 <div className="space-y-3">
-                  <a href="https://wa.me/27634220505" target="_blank" rel="noreferrer" className="flex items-center justify-center space-x-3 bg-[#FF7A00] text-white p-4 rounded hover:bg-[#FFA800] transition-colors group w-full shadow-lg">
+                  <a href="https://wa.me/27614075624" target="_blank" rel="noreferrer" className="flex items-center justify-center space-x-3 bg-[#FF7A00] text-white p-4 rounded hover:bg-[#FFA800] transition-colors group w-full shadow-lg">
                     <span className="text-white group-hover:scale-110 transition-transform">
                       <svg fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.48-4.18-7.076-7.076l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                     </span>
                     <span className="text-lg font-bold tracking-wider">063 422 0505</span>
                   </a>
-                  <a href="https://wa.me/27719875474" target="_blank" rel="noreferrer" className="flex items-center justify-center space-x-3 bg-[#1A1D24] border border-white/10 p-4 rounded hover:border-[#FF7A00] transition-colors group w-full">
-                    <span className="text-[#FF7A00] group-hover:scale-110 transition-transform">
-                      <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
-                    </span>
-                    <span className="text-lg font-bold tracking-wider">071 987 5474</span>
-                  </a>
+                  
                 </div>
               </div>
 
               {/* Secondary Fallback: Minimal Email Form */}
               <div className="space-y-4 pl-0 md:pl-6 md:border-l border-white/10">
                 <p className="text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-2">Or Drop a Message</p>
-                <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
-                  <input type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full bg-[#0A0B0E] border border-white/5 rounded p-3 text-xs text-white placeholder-neutral-600 focus:outline-none focus:border-[#FF7A00] transition-colors" placeholder="Your Name" />
-                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full bg-[#0A0B0E] border border-white/5 rounded p-3 text-xs text-white placeholder-neutral-600 focus:outline-none focus:border-[#FF7A00] transition-colors" placeholder="Your Email" />
-                  <textarea name="message" value={formData.message} onChange={handleInputChange} rows={3} className="w-full bg-[#0A0B0E] border border-white/5 rounded p-3 text-xs text-white placeholder-neutral-600 focus:outline-none focus:border-[#FF7A00] transition-colors resize-none" placeholder="Project Details" />
-                  <button type="submit" className="w-full bg-transparent border border-white/10 text-neutral-300 py-3 rounded text-xs font-bold tracking-wider hover:border-[#FF7A00] hover:text-[#FF7A00] transition-colors uppercase">
-                    Submit Request
+                <form className="space-y-3" onSubmit={handleFormSubmit}>
+                  
+                  {/* Hidden input required for Netlify to link the React request to the HTML form */}
+                  <input type="hidden" name="form-name" value="contact" />
+
+                  <input 
+                    type="text" 
+                    name="name" 
+                    required
+                    value={formData.name} 
+                    onChange={handleInputChange} 
+                    className="w-full bg-[#0A0B0E] border border-white/5 rounded p-3 text-xs text-white placeholder-neutral-600 focus:outline-none focus:border-[#FF7A00] transition-colors" 
+                    placeholder="Your Name" 
+                  />
+                  <input 
+                    type="email" 
+                    name="email" 
+                    required
+                    value={formData.email} 
+                    onChange={handleInputChange} 
+                    className="w-full bg-[#0A0B0E] border border-white/5 rounded p-3 text-xs text-white placeholder-neutral-600 focus:outline-none focus:border-[#FF7A00] transition-colors" 
+                    placeholder="Your Email" 
+                  />
+                  <textarea 
+                    name="message" 
+                    required
+                    value={formData.message} 
+                    onChange={handleInputChange} 
+                    rows={3} 
+                    className="w-full bg-[#0A0B0E] border border-white/5 rounded p-3 text-xs text-white placeholder-neutral-600 focus:outline-none focus:border-[#FF7A00] transition-colors resize-none" 
+                    placeholder="Project Details" 
+                  />
+                  
+                  <button 
+                    type="submit" 
+                    disabled={submitStatus === 'submitting' || submitStatus === 'success'}
+                    className={`w-full py-3 rounded text-xs font-bold tracking-wider uppercase transition-colors border ${
+                      submitStatus === 'success' 
+                        ? 'bg-[#FF7A00]/20 border-[#FF7A00] text-[#FF7A00]' 
+                        : submitStatus === 'error'
+                        ? 'bg-red-500/20 border-red-500 text-red-500'
+                        : 'bg-transparent border-white/10 text-neutral-300 hover:border-[#FF7A00] hover:text-[#FF7A00]'
+                    }`}
+                  >
+                    {submitStatus === 'submitting' ? 'Sending...' : submitStatus === 'success' ? 'Message Sent!' : submitStatus === 'error' ? 'Error. Try Again' : 'Submit Request'}
                   </button>
                 </form>
               </div>
@@ -916,7 +978,7 @@ export default function App() {
               South Africa
             </p>
             <p className="border-b border-white/10 pb-1 inline-block text-white">admin@knt.dev</p>
-            <p className="pt-1 block font-bold text-white">WhatsApp: 063 422 0505 / 071 987 5474</p>
+            <p className="pt-1 block font-bold text-white">WhatsApp: 061 407 5624</p>
           </div>
 
           <div className="lg:col-span-2 space-y-4">
