@@ -231,15 +231,19 @@ export default function App() {
     e.preventDefault();
     setSubmitStatus('submitting');
 
-    fetch("/", {
+    fetch("/contact.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...formData })
     })
-      .then(() => {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' }); // Clear the form
-        setTimeout(() => setSubmitStatus('idle'), 4000); // Reset button after 4 seconds
+      .then((response) => {
+        if (response.ok) {
+          setSubmitStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setSubmitStatus('idle'), 4000);
+        } else {
+          setSubmitStatus('error');
+        }
       })
       .catch((error) => {
         console.error(error);
