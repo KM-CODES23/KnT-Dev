@@ -246,7 +246,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto flex items-center justify-between py-4">
             <div className="flex items-center space-x-2">
               <a href="#home">
-                <img src={logo} alt="KnT Dev Logo" className="h-10 w-auto object-contain rounded-md" />
+                <img src={logo} alt="KnT Dev Logo" className="h-10 w-auto object-contain rounded-md" loading="lazy"/>
               </a>
             </div>
             
@@ -533,6 +533,7 @@ export default function App() {
                       src={project.img} 
                       alt={project.title} 
                       className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+                      loading="lazy"
                     />
 
                     {/* Dark gradient to ensure text readability */}
@@ -810,7 +811,7 @@ export default function App() {
 
                 <div className="w-14 h-14 bg-[#1A1D24] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
 
-                  <img src={kmcodes} alt="Kgothatso Mohanoe" className="w-full h-full object-cover" />
+                  <img src={kmcodes} alt="Kgothatso Mohanoe" className="w-full h-full object-cover" loading="lazy"/>
 
                 </div>
 
@@ -828,7 +829,7 @@ export default function App() {
 
                 <div className="w-14 h-14 bg-[#1A1D24] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
 
-                  <img src={lunar} alt="Tshepang Mabitle" className="w-full h-full object-cover" />
+                  <img src={lunar} alt="Tshepang Mabitle" className="w-full h-full object-cover" loading="lazy"/>
 
                 </div>
 
@@ -897,7 +898,7 @@ export default function App() {
           
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="KnT Dev Logo" className="h-9 w-auto object-contain rounded" />
+              <img src={logo} alt="KnT Dev Logo" className="h-9 w-auto object-contain rounded" loading="lazy"/>
             </div>
             <p className="leading-relaxed max-w-sm">
               Code. Automate. Innovate. We build smart, scalable, and reliable tech solutions that power businesses into the future.
