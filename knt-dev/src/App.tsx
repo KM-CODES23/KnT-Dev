@@ -492,6 +492,123 @@ export default function App() {
           </div>
         </div>
 
+{/* PRICING SECTION */}
+        <div id="pricing" className="space-y-6 pt-10">
+          <div className="flex flex-col space-y-1 observe-me fade-up">
+            <h2 className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>Investment Plans</h2>
+            <p className="text-[11px] text-neutral-400">Transparent, high-ROI digital architecture for local businesses and startups.</p>
+          </div>
+          
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 observe-me fade-up">
+            
+            {/* Tier 1: Starter */}
+            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors relative group">
+              <div className="mb-4">
+                <h3 className="text-sm font-bold text-white mb-1">The Local Starter</h3>
+                <p className="text-[10px] text-neutral-500">Perfect for a legitimate online presence.</p>
+              </div>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-white">R1,800</span>
+                <span className="text-[10px] text-neutral-500 ml-1">starting</span>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "Single-page scrolling website",
+                  "Mobile-responsive UI",
+                  "Lead capture contact form",
+                  "Free .co.za domain (1 Yr)",
+                  "1 Month basic maintenance"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start text-[11px] text-neutral-300">
+                    <svg className="w-3.5 h-3.5 text-[#FF7A00] mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors">
+                Get Started
+              </a>
+            </div>
+
+            {/* Tier 2: Professional (Highlighted) */}
+            <div className="flex flex-col p-6 bg-[#1A1D24] border border-[#FF7A00]/50 rounded-xl relative transform md:-translate-y-2 shadow-lg shadow-[#FF7A00]/5">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FF7A00] text-[#0A0B0E] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                Most Popular
+              </div>
+              <div className="mb-4">
+                <h3 className="text-sm font-bold text-[#FF7A00] mb-1">The Professional</h3>
+                <p className="text-[10px] text-neutral-400">For established retail and service businesses.</p>
+              </div>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-white">R3,500</span>
+                <span className="text-[10px] text-neutral-500 ml-1">starting</span>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "Up to 4 custom pages",
+                  "Advanced animations & custom UI",
+                  "Basic On-Page SEO setup",
+                  "Google Search Console Indexing",
+                  "Free .co.za domain (1 Yr)",
+                  "2 Months basic maintenance"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start text-[11px] text-neutral-200">
+                    <svg className="w-3.5 h-3.5 text-[#FF7A00] mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#FF7A00] text-[#0A0B0E] hover:bg-[#FF7A00]/90 transition-colors">
+                Book a Discovery Call
+              </a>
+            </div>
+
+            {/* Tier 3: Premium */}
+            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors relative group">
+              <div className="mb-4">
+                <h3 className="text-sm font-bold text-white mb-1">Premium 3D App</h3>
+                <p className="text-[10px] text-neutral-500">Complex architecture and immersive UI.</p>
+              </div>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-white">R6,500</span>
+                <span className="text-[10px] text-neutral-500 ml-1">starting</span>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "Unlimited standard pages",
+                  "Three.js 3D web elements",
+                  "Advanced React routing logic",
+                  "Comprehensive SEO & Analytics",
+                  "Free .co.za domain (1 Yr)",
+                  "3 Months priority support"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start text-[11px] text-neutral-300">
+                    <svg className="w-3.5 h-3.5 text-[#FF7A00] mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors">
+                Get a Custom Quote
+              </a>
+            </div>
+{/* PRICING DISCLAIMER */}
+          <div className="max-w-3xl mx-auto text-center pt-8 space-y-2 border-t border-white/5 mt-8">
+            <p className="text-[10px] text-neutral-500">
+              Need a custom Mobile App or AI Workflow Automation? <a href="#contact" className="text-[#FF7A00] hover:underline font-bold">Contact us for a specialized quote.</a>
+            </p>
+            <p className="text-[9px] text-neutral-400 leading-relaxed max-w-2xl mx-auto">
+              *Disclaimer: All listed prices are starting estimates and may vary based on final project scope and technical requirements. A 50% non-refundable deposit is required to secure development time, with the remaining balance due prior to live deployment. The free .co.za domain is valid for the first 12 months; subsequent annual domain renewals and premium hosting fees are the responsibility of the client. "Maintenance" includes essential security patches and minor text/image updates (max 1-2 hours/month). Requests for entirely new features or structural redesigns will be quoted separately at our standard hourly studio rate.
+            </p>
+          </div>
+          </div>
+          
+          
+        </div>
+        
+
+
         {/* PORTFOLIO (UPDATED WITH SCREENSHOTS) */}
         <div id="portfolio" className="space-y-6">
           <div className="flex items-center justify-between observe-me fade-up">
@@ -670,46 +787,42 @@ export default function App() {
           </div>
         </div>
 
-{/* TESTIMONIALS / SOCIAL PROOF (NEW) */}
-        <div className="space-y-8 pt-4">
-          <div className="text-center space-y-2 observe-me fade-up">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>Client Validation</h2>
-            <p className="text-xs text-neutral-400 max-w-xl mx-auto">We let our code and our delivery times speak for themselves.</p>
+{/* FEEDBACK & REVIEWS SECTION */}
+        <div id="reviews" className="space-y-6 pt-10 pb-16 observe-me fade-up">
+          <div className="flex flex-col items-center text-center space-y-2">
+            <h2 className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>
+              We Value Your Feedback
+            </h2>
+            <p className="text-[11px] text-neutral-400 max-w-md">
+              As a growing tech studio, your thoughts mean everything to us. Help us improve and reach more people by sharing your experience!
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="card-glass p-6 border border-white/5 observe-me fade-right relative">
-              <span className="absolute top-4 right-4 text-4xl text-[#FF7A00]/20 font-serif">"</span>
-              <div className="flex space-x-1 mb-4 text-[#FF7A00]">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+
+          <div className="flex justify-center mt-6">
+            <div className="flex flex-col items-center p-8 bg-[#1A1D24] border border-[#FF7A00]/30 rounded-xl hover:border-[#FF7A00] transition-colors shadow-lg shadow-[#FF7A00]/5 max-w-sm w-full text-center">
+              
+              {/* 5-Star Graphic */}
+              <div className="flex space-x-1 text-[#FF7A00] mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <svg key={star} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
               </div>
-              <p className="text-xs text-neutral-300 leading-relaxed italic mb-6">
-                "The team at DevKnT completely overhauled our operational workflow. The automated CRM sync they built saved us literally 15 hours a week in manual entry. Highly recommend their full-stack capabilities."
+
+              <h3 className="text-sm font-bold text-white mb-2">Rate KnT.Dev Studio</h3>
+              <p className="text-[10px] text-neutral-400 mb-6 leading-relaxed">
+                Loved your new website or digital service? Leave us a quick 5-star review to help other businesses find our digital architecture.
               </p>
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-white/10"></div>
-                <div>
-                  <h5 className="text-[11px] font-bold text-white uppercase tracking-wider">Regional Tech Client</h5>
-                  <p className="text-[9px] text-neutral-500 uppercase">Gauteng, SA</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="card-glass p-6 border border-white/5 observe-me fade-left relative">
-              <span className="absolute top-4 right-4 text-4xl text-[#FF7A00]/20 font-serif">"</span>
-              <div className="flex space-x-1 mb-4 text-[#FF7A00]">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <p className="text-xs text-neutral-300 leading-relaxed italic mb-6">
-                "From our first discovery call to the final cloud deployment, communication was 100% transparent. Our new platform handles heavy traffic effortlessly and their ongoing hardware/software support is flawless."
-              </p>
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-white/10"></div>
-                <div>
-                  <h5 className="text-[11px] font-bold text-white uppercase tracking-wider">E-Commerce Founder</h5>
-                  <p className="text-[9px] text-neutral-500 uppercase">Northern Cape, SA</p>
-                </div>
-              </div>
+              
+              <a 
+                href="https://g.page/r/CbldNDng9TDVEBM/review" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-[#FF7A00] text-[#0A0B0E] text-[10px] font-bold uppercase tracking-wider rounded hover:bg-[#FF7A00]/90 transition-colors w-full"
+              >
+                Rate Us on Google
+              </a>
             </div>
           </div>
         </div>
@@ -721,7 +834,7 @@ export default function App() {
           <div className="space-y-2 observe-me fade-right">
             <div className="relative pb-2 inline-block">
               <h2 className="text-2xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>
-                About DevKnT
+                About KnT.Dev Studio
               </h2>
               <div className="absolute bottom-0 left-0 h-[2px] w-12 bg-gradient-to-r from-[#FF7A00] to-[#FFA800]" />
             </div>
@@ -741,7 +854,7 @@ export default function App() {
                   Founded with a vision to build modern, accessible, and high-performance technology.
                 </h3>
                 <p className="text-xs leading-relaxed text-neutral-400">
-                  DevKnT was established by co-founders <strong className="text-white">Kgothatso</strong> and <strong className="text-white">Tshepang</strong> as an evolution of local digital craftsmanship into a full-scale software and development studio. Born from a passion for clean code and problem-solving, DevKnT blends local identity with enterprise-level development standards—creating websites, web applications, cloud architectures, and digital tools built to scale.
+                  KnT.Dev Studio was established by co-founders <strong className="text-white">Kgothatso</strong> and <strong className="text-white">Tshepang</strong> as an evolution of local digital craftsmanship into a full-scale software and development studio. Born from a passion for clean code and problem-solving, KnT.Dev blends local identity with enterprise-level development standards—creating websites, web applications, cloud architectures, and digital tools built to scale.
                 </p>
               </div>
 
