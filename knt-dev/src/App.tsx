@@ -493,117 +493,178 @@ export default function App() {
         </div>
 
 {/* PRICING SECTION */}
-        <div id="pricing" className="space-y-6 pt-10">
-          <div className="flex flex-col space-y-1 observe-me fade-up">
-            <h2 className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>Investment Plans</h2>
-            <p className="text-[11px] text-neutral-400">Transparent, high-ROI digital architecture for local businesses and startups.</p>
+        {/* SERVICES OFFERED */}
+        <div id="services-list" className="pt-10 pb-6 observe-me fade-up">
+          <div className="flex flex-col items-center text-center mb-6">
+             <h2 className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>Our Services</h2>
           </div>
-          
+          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+            {['Business Websites', 'E-Commerce', 'Landing Pages', 'Portfolio Websites', 'Booking Websites', 'Website Redesign', 'Web Maintenance', 'SEO & Speed Optimization'].map((service, i) => (
+              <span key={i} className="px-3 py-1 bg-[#13151A] border border-white/10 rounded-full text-[11px] text-neutral-300">
+                {service}
+              </span>
+            ))}
+          </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 observe-me fade-up">
+        {/* PRICING SECTION - WEBSITES */}
+        <div id="pricing" className="space-y-6 pt-4">
+          <div className="flex flex-col space-y-1 observe-me fade-up text-center">
+            <h2 className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: 'Plus Jakarta Sans' }}>Website Packages</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 observe-me fade-up">
             
-            {/* Tier 1: Starter */}
-            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors relative group">
+            {/* Basic */}
+            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors">
               <div className="mb-4">
-                <h3 className="text-sm font-bold text-white mb-1">The Local Starter</h3>
-                <p className="text-[10px] text-neutral-500">Perfect for a legitimate online presence.</p>
+                <h3 className="text-sm font-bold text-white mb-1">Basic</h3>
               </div>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white">R1,800</span>
-                <span className="text-[10px] text-neutral-500 ml-1">starting</span>
+                <span className="text-2xl font-bold text-white">R1,000</span>
+                <span className="text-[10px] text-neutral-500 ml-1">- R1,200</span>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  "Single-page scrolling website",
-                  "Mobile-responsive UI",
-                  "Lead capture contact form",
-                  "Free .co.za domain (1 Yr)",
-                  "1 Month basic maintenance"
-                ].map((feature, i) => (
+                {["Responsive, clean UI (standard components)", "Basic SEO", "Netlify deployment", "1 month basic maintenance (bug fixes/text)"].map((feature, i) => (
                   <li key={i} className="flex items-start text-[11px] text-neutral-300">
-                    <svg className="w-3.5 h-3.5 text-[#FF7A00] mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    {feature}
+                    <span className="text-[#FF7A00] mr-2">▹</span>{feature}
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors">
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors mt-auto">
                 Get Started
               </a>
             </div>
 
-            {/* Tier 2: Professional (Highlighted) */}
-            <div className="flex flex-col p-6 bg-[#1A1D24] border border-[#FF7A00]/50 rounded-xl relative transform md:-translate-y-2 shadow-lg shadow-[#FF7A00]/5">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FF7A00] text-[#0A0B0E] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                Most Popular
-              </div>
+            {/* Starter */}
+            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors">
               <div className="mb-4">
-                <h3 className="text-sm font-bold text-[#FF7A00] mb-1">The Professional</h3>
-                <p className="text-[10px] text-neutral-400">For established retail and service businesses.</p>
+                <h3 className="text-sm font-bold text-white mb-1">Starter</h3>
               </div>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white">R3,500</span>
-                <span className="text-[10px] text-neutral-500 ml-1">starting</span>
+                <span className="text-2xl font-bold text-white">R2,500</span>
+                <span className="text-[10px] text-neutral-500 ml-1">- R4,500</span>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  "Up to 4 custom pages",
-                  "Advanced animations & custom UI",
-                  "Basic On-Page SEO setup",
-                  "Google Search Console Indexing",
-                  "Free .co.za domain (1 Yr)",
-                  "2 Months basic maintenance"
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start text-[11px] text-neutral-200">
-                    <svg className="w-3.5 h-3.5 text-[#FF7A00] mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    {feature}
+                {["1 premium landing page", "Mobile responsive & fast loading", "Contact form & basic WhatsApp chat", "Basic SEO & Google Search Console", "Google Business Profile", "Free 3 months marketing", "1 month maintenance", "Training and support", "Netlify or custom domain/hosting"].map((feature, i) => (
+                  <li key={i} className="flex items-start text-[11px] text-neutral-300">
+                    <span className="text-[#FF7A00] mr-2">▹</span>{feature}
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#FF7A00] text-[#0A0B0E] hover:bg-[#FF7A00]/90 transition-colors">
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors mt-auto">
+                Get Started
+              </a>
+            </div>
+
+            {/* Standard */}
+            <div className="flex flex-col p-6 bg-[#1A1D24] border border-[#FF7A00]/50 rounded-xl shadow-lg relative transform md:-translate-y-2">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FF7A00] text-[#0A0B0E] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Recommended</div>
+              <div className="mb-4">
+                <h3 className="text-sm font-bold text-[#FF7A00] mb-1">Standard</h3>
+              </div>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-white">R5,000</span>
+                <span className="text-[10px] text-neutral-500 ml-1">- R10,000</span>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {["Everything in Starter", "Up to 5 custom pages", "Advanced animations & custom UI", "Advanced SEO & analytics", "Database integration", "Free .co.za domain (1 year)", "Free 3 months marketing", "2 months maintenance"].map((feature, i) => (
+                  <li key={i} className="flex items-start text-[11px] text-neutral-200">
+                    <span className="text-[#FF7A00] mr-2">▹</span>{feature}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#FF7A00] text-[#0A0B0E] hover:bg-[#FF7A00]/90 transition-colors mt-auto">
                 Book a Discovery Call
               </a>
             </div>
 
-            {/* Tier 3: Premium */}
-            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors relative group">
+            {/* Premium */}
+            <div className="flex flex-col p-6 bg-[#13151A] border border-white/5 rounded-xl hover:border-white/10 transition-colors">
               <div className="mb-4">
-                <h3 className="text-sm font-bold text-white mb-1">Premium 3D App</h3>
-                <p className="text-[10px] text-neutral-500">Complex architecture and immersive UI.</p>
+                <h3 className="text-sm font-bold text-white mb-1">Premium</h3>
               </div>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white">R6,500</span>
-                <span className="text-[10px] text-neutral-500 ml-1">starting</span>
+                <span className="text-2xl font-bold text-white">R12,000</span>
+                <span className="text-[10px] text-neutral-500 ml-1">- R20,000</span>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  "Unlimited standard pages",
-                  "Three.js 3D web elements",
-                  "Advanced React routing logic",
-                  "Comprehensive SEO & Analytics",
-                  "Free .co.za domain (1 Yr)",
-                  "3 Months priority support"
-                ].map((feature, i) => (
+                {["Everything in Standard", "Unlimited pages", "3D clean website design", "CMS & Database integration", "Free .com or .co.za domain", "Free 6 months marketing + 1 mo. Google Ads setup", "3 months maintenance"].map((feature, i) => (
                   <li key={i} className="flex items-start text-[11px] text-neutral-300">
-                    <svg className="w-3.5 h-3.5 text-[#FF7A00] mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    {feature}
+                    <span className="text-[#FF7A00] mr-2">▹</span>{feature}
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors">
+              <a href="#contact" className="block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors mt-auto">
                 Get a Custom Quote
               </a>
             </div>
+          </div>
+
+         {/* OTHER SERVICES (APP, AI, MAINTENANCE) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 observe-me fade-up">
+            
+            {/* App Development */}
+            <div className="p-6 bg-[#13151A] border border-white/5 rounded-xl flex flex-col hover:border-white/10 transition-colors">
+              <h3 className="text-sm font-bold text-white mb-4">App Development</h3>
+              <div className="space-y-4 flex-1">
+                <div>
+                  <div className="text-[11px] font-bold text-white mb-1">MVP / Prototype</div>
+                  <div className="text-[10px] text-neutral-400">Includes simple UI, user authentication, and basic database reading/writing.</div>
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-white mb-1">Full Application</div>
+                  <div className="text-[10px] text-neutral-400">Inventory/booking portals, complex logic, admin dashboards, and Play Store/App Store deployment.</div>
+                </div>
+              </div>
+              <a href="#contact" className="mt-6 block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-[#FF7A00] text-[#FF7A00] hover:bg-[#FF7A00] hover:text-[#0A0B0E] transition-colors">
+                Contact for Custom Quote
+              </a>
+            </div>
+            
+            {/* AI Automation */}
+            <div className="p-6 bg-[#13151A] border border-white/5 rounded-xl flex flex-col hover:border-white/10 transition-colors">
+              <h3 className="text-sm font-bold text-white mb-4">AI Automation</h3>
+              <div className="space-y-4 flex-1">
+                <div>
+                  <div className="text-[11px] font-bold text-white mb-1">Workflow Setup</div>
+                  <div className="text-[10px] text-neutral-400">Custom API integrations, automated lead responses, and smart WhatsApp bots.</div>
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-white mb-1">API Retainer</div>
+                  <div className="text-[10px] text-neutral-400">Ongoing maintenance and API cost management for your active automations.</div>
+                </div>
+              </div>
+              <a href="#contact" className="mt-6 block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-[#FF7A00] text-[#FF7A00] hover:bg-[#FF7A00] hover:text-[#0A0B0E] transition-colors">
+                Contact for Custom Quote
+              </a>
+            </div>
+
+            {/* Software & Hardware Maintenance */}
+            <div className="p-6 bg-[#13151A] border border-white/5 rounded-xl flex flex-col hover:border-white/10 transition-colors">
+              <h3 className="text-sm font-bold text-white mb-4">IT Maintenance</h3>
+              <div className="space-y-4 flex-1">
+                <div>
+                  <div className="text-[11px] font-bold text-white mb-1">Ad-Hoc Support</div>
+                  <div className="text-[10px] text-neutral-400">One-off software troubleshooting, hardware diagnostics, and PC repairs.</div>
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-white mb-1">Monthly SLA Retainer</div>
+                  <div className="text-[10px] text-neutral-400">Dedicated hours of IT support, network troubleshooting, and security updates per month.</div>
+                </div>
+              </div>
+              <a href="#contact" className="mt-6 block text-center w-full py-2.5 rounded text-[10px] font-bold tracking-wider uppercase border border-white/10 text-neutral-300 hover:bg-white/5 transition-colors">
+                Contact for Rates
+              </a>
+            </div>
 {/* PRICING DISCLAIMER */}
-          <div className="max-w-3xl mx-auto text-center pt-8 space-y-2 border-t border-white/5 mt-8">
-            <p className="text-[10px] text-neutral-500">
-              Need a custom Mobile App or AI Workflow Automation? <a href="#contact" className="text-[#FF7A00] hover:underline font-bold">Contact us for a specialized quote.</a>
-            </p>
-            <p className="text-[9px] text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-              *Disclaimer: All listed prices are starting estimates and may vary based on final project scope and technical requirements. A 50% non-refundable deposit is required to secure development time, with the remaining balance due prior to live deployment. The free .co.za domain is valid for the first 12 months; subsequent annual domain renewals and premium hosting fees are the responsibility of the client. "Maintenance" includes essential security patches and minor text/image updates (max 1-2 hours/month). Requests for entirely new features or structural redesigns will be quoted separately at our standard hourly studio rate.
+          <div className="max-w-4xl mx-auto text-center pt-10 space-y-2 border-t border-white/5 mt-8">
+            <h4 className="text-[10px] font-bold text-white uppercase tracking-wider">Website Pricing Disclaimer & Variance Notice</h4>
+            <p className="text-[9px] text-neutral-400 leading-relaxed mx-auto text-justify">
+              The web development packages and price ranges listed above serve as baseline estimations for standard business requirements and do not constitute a final binding financial offer. Website development costs in South Africa vary significantly based on unique business needs, including custom feature requests, the total number of landing pages, third-party software integrations (such as booking engines or real-time CRM syncing), advanced e-commerce logic, and copy asset readiness. Please contact us directly for a comprehensive project assessment and an official, itemised quotation tailored to your exact scope.
             </p>
           </div>
           </div>
-          
           
         </div>
         
